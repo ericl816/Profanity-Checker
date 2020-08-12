@@ -1,7 +1,7 @@
-from keras.layers import Dense, Embedding, Input
-from keras.layers import Bidirectional, Dropout, LSTM #, CuDNNLSTM, CuDNNGRU
-from keras.models import Model
-from keras.optimizers import RMSprop
+from tensorflow.keras.layers import Dense, Embedding, Input
+from tensorflow.keras.layers import Bidirectional, Dropout, LSTM #, CuDNNLSTM, CuDNNGRU
+from tensorflow.keras.models import Model
+from tensorflow.keras.optimizers import RMSprop
 
 def get_model(embedding_matrix, sequence_length, dropout_rate, recurrent_units, dense_size):
     input_layer = Input(shape=(sequence_length,))
