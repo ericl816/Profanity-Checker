@@ -33,7 +33,6 @@ def main():
 
     args = parser.parse_args()
 
-    """
     if args.fold_count <= 1:
         raise ValueError("fold-count should be more than 1")
 
@@ -58,13 +57,11 @@ def main():
     # print("words_dict after = ", words_dict)
 
     words_dict[UNKNOWN_WORD] = len(words_dict)
-    """
 
     print("Loading embeddings...")
     embedding_list, embedding_word_dict = read_embedding_list(args.embedding_path)
     embedding_size = len(embedding_list[0])
 
-    """
     print("Preparing data...")
     embedding_list, embedding_word_dict = clear_embedding_list(embedding_list, embedding_word_dict, words_dict)
 
@@ -134,7 +131,6 @@ def main():
     # Route results to a CSV file: "finished.csv" with path "predict_results/finished"
     submit_path = os.path.join(args.result_path, "finished")
     test_predicts.to_csv(submit_path, index=False)
-    """
 
 if __name__ == "__main__":
     main()

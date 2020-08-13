@@ -28,7 +28,7 @@ def _train_model(model, batch_size, train_x, train_y, val_x, val_y):
             best_weights = model.get_weights()
             best_epoch = current_epoch
         else:
-            if current_epoch - best_epoch == 5:
+            if current_epoch - best_epoch == 1 or current_epoch > 5:
                 break
 
     model.set_weights(best_weights)
