@@ -44,7 +44,7 @@ def main():
     list_sentences_test = test_data["comment_text"].fillna(NAN_WORD).values
     y_train = train_data[CLASSES].values
 
-    print("list_sentences_test = ", list_sentences_test)
+    # print("list_sentences_test = ", list_sentences_test)
 
     print("Tokenizing sentences in train set...")
     tokenized_sentences_train, words_dict = tokenize_sentences(list_sentences_train, {})

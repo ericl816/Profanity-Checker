@@ -1,6 +1,8 @@
 import nltk
 import tqdm
 
+nltk.download('punkt')
+
 def tokenize_sentences(sentences, words_dict):
     tokenized_sentences = []
     for sentence in tqdm.tqdm(sentences):
