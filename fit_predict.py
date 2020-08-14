@@ -7,6 +7,8 @@ import argparse
 import numpy as np
 import os
 import pandas as pd
+import pickle
+import time
 
 UNKNOWN_WORD = "_UNK_"
 END_WORD = "_END_"
@@ -36,6 +38,7 @@ def main():
     if args.fold_count <= 1:
         raise ValueError("fold-count should be more than 1")
 
+    start = time.time()
     print("Loading data...")
     train_data = pd.read_csv(args.train_file_path)
     test_data = pd.read_csv(args.test_file_path)
@@ -61,6 +64,22 @@ def main():
     print("Loading embeddings...")
     embedding_list, embedding_word_dict = read_embedding_list(args.embedding_path)
     embedding_size = len(embedding_list[0])
+
+    """
+    with open('embedding_list.txt', 'wb') as file:
+        pickle.dump(embedding_list, file)
+    with open('embedding_word_dict.txt', 'wb') as file:
+        pickle.dump(embedding_word_dict, file)
+    with open('embedding_list.txt', 'rb') as file:
+        embedding_list = pickle.load(file)
+    with open('embedding_word_dict.txt', 'rb') as file:
+        embedding_word_dict = pickle.load(file)
+
+    print(embedding_list)
+    print(embedding_word_dict)
+    """
+    end = time.time()
+    print("Time elapsed: " + end - start)
 
     print("Preparing data...")
     embedding_list, embedding_word_dict = clear_embedding_list(embedding_list, embedding_word_dict, words_dict)
