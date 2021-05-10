@@ -1,4 +1,4 @@
-# Offensive-Comments
+# Profanity-Checker
 
 # Run script
 First, install required libraries:
@@ -15,4 +15,4 @@ Next, run:
 
 `python fit_predict.py train.csv test.csv crawl-300d-2M.vec`
 
-You will need some time to train a model. It takes ~3-4 hours on GTX 1080 Ti. In the end, there will be a file called `predict_results/submit` containing the scores for each column.
+You will need some time to train a model. It should take ~3-4 hours on GTX 1080 Ti. In the end, there will be an output file called `predict_results/submit` containing the scores for each column.
